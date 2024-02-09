@@ -1,0 +1,29 @@
+p {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    color: #ff0000;
+}
+
+#my_h1 {
+    color: yellow;
+}
+
+p.my_class {
+    color: aqua;
+}
+
+h2:hover {
+    color: aquamarine;
+}
+
+a:visited {
+    color: brown;
+}
+
+div.container button {
+    background: blue;
+}

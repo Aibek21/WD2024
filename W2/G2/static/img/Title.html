@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)http://localhost:63342/WD2024/W2/G2/html/forms.html?_ijt=kk3h2ft19nmrprdfaenodcltk6&_ij_reload=RELOAD_ON_SAVE -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <label>Username</label>
+        <input type="text" placeholder="Enter username">
+    </fieldset>
+    <fieldset>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required="">
+    </fieldset>
+    <fieldset>
+        <label>Radio</label>
+        <input type="radio">
+    </fieldset>
+    <fieldset>
+        <label>Checkbox</label>
+        <input type="checkbox">
+    </fieldset>
+    <fieldset>
+        <label>Color</label>
+        <input type="color">
+    </fieldset>
+    <fieldset>
+        <label>Date</label>
+        <input type="date">
+    </fieldset>
+
+    <fieldset>
+        <label>Number</label>
+        <input type="number">
+    </fieldset>
+    <fieldset>
+        <label>Select</label>
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <label>Submit</label>
+        <input type="submit">
+    </fieldset>
+</form>
+
+
+<div style="background: blue; width: 20%; height: 200px; padding: 20px 0 0 20px; border: 5px solid;">
+    <div style="background: yellow; width:100px; height:100px;">
+
+    </div>
+</div>
+<div style="background: red; width: 200px; height: 200px; margin: 20px 0 0 20px">
+</div>
+
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host + 
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash 
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script></body></html>

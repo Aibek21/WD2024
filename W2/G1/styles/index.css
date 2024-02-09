@@ -1,0 +1,24 @@
+h1 {
+    color: blue;
+    font-weight: bold;
+}
+
+p {
+    color: red;
+}
+
+#my_h1 {
+    color: red;
+}
+
+p.my_class {
+    font-size: 30px;
+}
+
+h3:hover {
+    color: #ff0000;
+}
+
+a:visited {
+    color: green;
+}

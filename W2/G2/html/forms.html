@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.container {*/
+        /*    position: sticky;*/
+        /*    top: 20px;*/
+        /*    left: 30px;*/
+        /*}*/
+
+        .outer_block {
+            display: block;
+        }
+
+        .inner_block {
+            display: inline-block;
+        }
+
+        .button {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <label>Username</label>
+        <input type="text" placeholder="Enter username">
+    </fieldset>
+    <fieldset>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+    </fieldset>
+    <fieldset>
+        <label>Radio</label>
+        <input type="radio">
+    </fieldset>
+    <fieldset>
+        <label>Checkbox</label>
+        <input type="checkbox">
+    </fieldset>
+    <fieldset>
+        <label>Color</label>
+        <input type="color">
+    </fieldset>
+    <fieldset>
+        <label>Date</label>
+        <input type="date">
+    </fieldset>
+
+    <fieldset>
+        <label>Number</label>
+        <input type="number">
+    </fieldset>
+    <fieldset>
+        <label>Select</label>
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <label>Submit</label>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="outer_block">
+    <button class="button">Button 1</button>
+    <button class="button">Button 2</button>
+    <button class="button">Button 3</button>
+    <button class="button">Button 4</button>
+</div>
+<div class="outer_block" style="position: absolute">
+    <div class="inner_block" style="background: red; width: 200px; height: 200px;">
+    </div>
+    <div class="inner_block" style="background: red; width: 200px; height: 200px;">
+    </div>
+    <div class="inner_block"
+         style="background: blue; width: 200px; height: 200px;">
+        <div style="background: yellow; width:100px; height:100px;">
+
+        </div>
+    </div>
+    <div class="inner_block" style="background: red; width: 200px; height: 200px;">
+    </div>
+    <div class="inner_block" style="background: red; width: 200px; height: 200px;">
+    </div>
+    <div class="inner_block" style="background: red; width: 200px; height: 200px;">
+    </div>
+</div>
+</body>
+</html>

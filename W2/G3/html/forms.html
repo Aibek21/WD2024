@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer_block {
+            display: grid;
+            grid-template-columns: 150px auto 40%;
+            grid-template-rows: 250px 10vw 15rem;
+        }
+
+        .container {
+            /*display: grid;*/
+            /*visibility: collapse;*/
+            /*position: sticky;*/
+            /*top: 100px;*/
+            /*left: 30px;*/
+        }
+
+        /*button {*/
+        /*    display: inline-block;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <label>Username</label>
+        <input type="text" placeholder="Enter username" value="user1" disabled>
+    </fieldset>
+
+    <fieldset>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+    </fieldset>
+
+    <fieldset>
+        <label>Radio</label>
+        <input type="radio">
+    </fieldset>
+
+    <fieldset>
+        <label>Checkbox</label>
+        <input type="checkbox">
+    </fieldset>
+
+    <fieldset>
+        <label>Select</label>
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <label>TextArea</label>
+        <textarea placeholder="Enter"></textarea>
+    </fieldset>
+    <fieldset>
+        <label>Color</label>
+        <input type="color">
+    </fieldset>
+
+    <fieldset>
+        <label>Date</label>
+        <input type="date">
+    </fieldset>
+    <fieldset>
+        <label>Submit</label>
+        <input type="submit">
+    </fieldset>
+</form>
+
+
+<button>Login</button>
+<button>Login</button>
+<button>Login</button>
+<button>Login</button>
+<button>Login</button>
+<div class="outer_block">
+    <div class="container" style="background: blue; width: 200px; height: 200px;">
+    </div>
+    <div class="container" style="background: red; width: 200px; height: 200px;">
+    </div>
+    <div class="container" style="background: yellow; width: 200px; height: 200px;">
+    </div>
+    <div class="container" style="background: blue; width: 200px; height: 200px;">
+    </div>
+    <div class="container" style="background: blue; width: 200px; height: 200px;">
+    </div>
+    <div class="container" style="background: blue; width: 200px; height: 200px;">
+    </div>
+</div>
+</body>
+</html>
