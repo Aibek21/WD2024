@@ -1,0 +1,32 @@
+<fieldset>
+  <input type="text" placeholder="Enter task title" [(ngModel)]="currentTask.title">
+  <button (click)="addTask()">Add task</button>
+</fieldset>
+
+<div>
+  <h1>New Tasks</h1>
+  <ul *ngFor="let task of taskList; let i = index">
+    <li>
+      <app-task-item [task]="task"
+                     (remove)="onTaskRemove($event)"
+                     (done)="onDoneChange($event)"
+      ></app-task-item>
+    </li>
+  </ul>
+</div>
+
+
+<div>
+  <h1>Done Tasks</h1>
+  <ul *ngFor="let task of doneTaskList; let i = index">
+    <li>
+      <app-task-item [task]="task"
+                     (remove)="onDoneTaskRemove($event)"
+                     (done)="onDoneChange($event)"
+      ></app-task-item>
+    </li>
+  </ul>
+</div>
+
+<!--[] inputs, send data from parent to child -->
+<!--() outputs, send data from child to parent -->

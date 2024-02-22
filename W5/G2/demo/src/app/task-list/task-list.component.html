@@ -1,0 +1,37 @@
+<fieldset>
+  <input type="text" placeholder="Enter title" [(ngModel)]="currentTask.title">
+  <button (click)="addTask()">Add task</button>
+</fieldset>
+
+
+<div>
+  <h1>New tasks</h1>
+  <div *ngIf="taskList.length">
+    <ul *ngFor="let task of taskList; let i = index">
+      <li>
+        <app-task-item [task]="task"
+                       (remove)="removeTask($event)"
+                       (done)="onDoneChanged($event)"></app-task-item>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="taskList.length == 0">New task list empty</p>
+</div>
+
+
+<div>
+  <h1>Done tasks</h1>
+  <div *ngIf="doneTaskList.length">
+    <ul *ngFor="let task of doneTaskList; let i = index">
+      <li>
+        <app-task-item [task]="task"
+                       (remove)="removeTask($event)"
+                       (done)="onDoneChanged($event)"
+        ></app-task-item>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="doneTaskList.length == 0">Done task list empty</p>
+</div>
