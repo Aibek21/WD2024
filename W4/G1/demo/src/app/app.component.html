@@ -1,0 +1,41 @@
+<h1>Hello {{ title }}</h1>
+<h1>Number {{ num + 10 }}</h1>
+
+<!--<p>{{arr}}</p>-->
+
+<ul>
+  <li *ngFor="let num of arr; let i = index">
+    {{i + 1}}) {{num}}
+  </li>
+</ul>
+
+
+<ul *ngIf="isEmpty">
+  <li *ngFor="let student of students; let i = index">
+    {{i + 1}}) {{student.id}} -- {{student.name}} -- {{student.gpa}}
+  </li>
+</ul>
+
+<button (click)="btnClick()">Click me</button>
+
+<fieldset>
+  <input type="text" [(ngModel)]="displayText">
+</fieldset>
+<button (click)="addItem()">Add item</button>
+
+<ul>
+  <li *ngFor="let todo of todos; let i = index">
+    {{i + 1}}) {{todo}}
+    <button (click)="removeItem(i)">Remove</button>
+  </li>
+</ul>
+
+
+<app-home></app-home>
+
+
+
+
+
+
+

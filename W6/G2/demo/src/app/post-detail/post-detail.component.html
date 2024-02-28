@@ -1,0 +1,12 @@
+<div *ngIf="loaded">
+  <h1>Post {{post.id}}</h1>
+  <h2>{{post.title}}</h2>
+  <p>{{post.body}}</p>
+</div>
+
+
+<h1 *ngIf="!loaded">Loading...</h1>
+
+<a routerLink="/posts/2">Post 2</a> <br>
+<a routerLink="/posts/3">Post 3</a>
+
